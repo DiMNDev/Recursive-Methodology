@@ -1,4 +1,5 @@
-﻿namespace Recursive_Methodology.Library;
+﻿
+namespace Recursive_Methodology.Library;
 
 public class FindTheIndex
 {
@@ -57,5 +58,34 @@ public class Fibonacci
         {
             return fibonacciRecursionMethod(currentNumber - 1) + fibonacciRecursionMethod(currentNumber - 2);
         }
+    }
+}
+
+public class RecursiveMath {
+    public static int Factorial(int number) {
+
+        if(number <= 0) {
+            throw new DoneDidMessedUpException("Must be a positive integer!");
+        }
+        if(number <=1) {
+            return number;
+        }
+        return number * Factorial(number -1);
+    }
+}
+
+[Serializable]
+public class DoneDidMessedUpException : Exception
+{
+    public DoneDidMessedUpException()
+    {
+    }
+
+    public DoneDidMessedUpException(string? message) : base(message)
+    {
+    }
+
+    public DoneDidMessedUpException(string? message, Exception? innerException) : base(message, innerException)
+    {
     }
 }
